@@ -9,20 +9,20 @@ echo ""
 
 CONFIG_URL="https://raw.githubusercontent.com/padarham9-ui/Create-config/main/config.txt"
 
-ID=$(settings get secure android_id 2>/dev/null)
-if [ -z "$ID" ]; then
-  ID=$(getprop ro.serialno 2>/dev/null)
-fi
-
-if [ -z "$ID" ]; then
-  echo "ERROR: Device ID not found!"
-  exit 1
-fi
-
 SAVE_DIR="$HOME/.configfars"
-SAVE_FILE="$SAVE_DIR/used_$ID.txt"
+ID_FILE="$SAVE_DIR/device_id.txt"
 
 mkdir -p "$SAVE_DIR"
+
+# Generate unique device ID (only first time)
+if [ -f "$ID_FILE" ]; then
+  ID=$(cat "$ID_FILE")
+else
+  ID=$(date +%s%N | sha256sum | cut -c1-16)
+  echo "$ID" > "$ID_FILE"
+fi
+
+SAVE_FILE="$SAVE_DIR/used_$ID.txt"
 
 PS3=$'\nChoose option: '
 
