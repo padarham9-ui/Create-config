@@ -9,4 +9,4 @@ chmod +x install.sh
 ```
 ##### سپس که اسکریپت رو اجرا کردید گزینه ی 1 رو وارد کنید و سپس اینتر بزنید!
 ## جوین شو 
-[TELEGRAM-CONFIGFARS](t.me/configfars)
+[TELEGRAM-CONFIGFARS](https://t.me/configfars)
