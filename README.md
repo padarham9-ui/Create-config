@@ -7,3 +7,4 @@ curl -sL https://raw.githubusercontent.com/padarham9-ui/Create-config/main/insta
 chmod +x install.sh
 ./install.sh
 ```
+##### سپس که اسکریپت رو اجرا کردید گزینه ی 1 رو وارد کنید و سپس اینتر بزنید!
